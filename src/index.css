@@ -1,0 +1,44 @@
+:root {
+  --py-blue: #3776ab;
+  --py-blue-dark: #2b5b84;
+  --py-yellow: #ffd43b;
+  --py-yellow-dark: #f5c518;
+  --ink: #1e2a38;
+  --ink-soft: #4a5b6e;
+  --card-bg: #ffffff;
+  --terminal-bg: #1f2937;
+  --terminal-green: #4ade80;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', system-ui,
+    -apple-system, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(1100px 600px at 85% -10%, rgba(255, 212, 59, 0.35), transparent 60%),
+    radial-gradient(900px 700px at -10% 110%, rgba(55, 118, 171, 0.28), transparent 60%),
+    linear-gradient(160deg, #eaf4ff 0%, #f7fbff 45%, #fff8e1 100%);
+  background-attachment: fixed;
+}
+
+code,
+pre {
+  font-family: 'JetBrains Mono', 'Fira Code', 'D2Coding', 'Menlo', monospace;
+}
+
+#root {
+  min-height: 100vh;
+}
