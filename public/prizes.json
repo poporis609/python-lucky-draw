@@ -2,10 +2,8 @@
   "_설명": "경품 설정 파일입니다. 빌드 없이 이 파일만 수정하면 바로 반영됩니다. (배포 후에는 dist/prizes.json 수정)",
   "_규칙": "weight = 당첨 확률 비중(전체 합 기준 %), minLuck = 이 등수가 나올 때 표시되는 행운지수의 최소값. minLuck이 높은 등수일수록 weight를 낮게 설정하세요.",
   "prizes": [
-    { "rank": 1, "label": "1등상", "emoji": "🏆", "minLuck": 90, "weight": 4, "prize": "프리미엄 굿즈 세트" },
-    { "rank": 2, "label": "2등상", "emoji": "🥈", "minLuck": 75, "weight": 12, "prize": "Python 티셔츠" },
-    { "rank": 3, "label": "3등상", "emoji": "🥉", "minLuck": 55, "weight": 24, "prize": "Python 스티커 팩" },
-    { "rank": 4, "label": "4등상", "emoji": "🎁", "minLuck": 30, "weight": 30, "prize": "뱃지 + 스티커" },
-    { "rank": 5, "label": "5등상", "emoji": "🍀", "minLuck": 0, "weight": 30, "prize": "스티커 1장" }
+    { "rank": 1, "label": "1등상", "emoji": "🏆", "minLuck": 90, "weight": 10, "prize": "" },
+    { "rank": 2, "label": "2등상", "emoji": "🥈", "minLuck": 75, "weight": 20, "prize": "" },
+    { "rank": 3, "label": "3등상", "emoji": "🥉", "minLuck": 55, "weight": 70, "prize": "" }
   ]
 }
