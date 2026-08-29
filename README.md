@@ -23,6 +23,27 @@ npm run preview  # 빌드 결과 로컬 확인
 `dist/` 폴더를 GitHub Pages, Netlify, Vercel 등 아무 정적 호스팅에 올리면 됩니다.
 행사장에서는 노트북/태블릿 가로 화면 + 브라우저 전체화면(F11 또는 ⌃⌘F) 모드를 권장합니다.
 
+## Railway 배포
+
+이 저장소에는 Railway 배포용 `Dockerfile`과 `Caddyfile`이 포함되어 있습니다.
+Caddy는 Railway가 주입하는 `PORT`에서 빌드 결과를 서빙하며, `/health` 헬스체크와 SPA 경로 fallback을 지원합니다.
+
+1. 이 저장소를 GitHub에 push합니다.
+2. Railway에서 **New Project → Deploy from GitHub repo**를 선택하고 저장소를 연결합니다.
+3. 별도의 Build Command나 Start Command는 입력하지 않습니다. Railway가 루트의 `Dockerfile`을 자동으로 사용합니다.
+4. 서비스의 **Settings → Healthcheck Path**를 `/health`로 설정합니다.
+5. **Networking → Generate Domain**으로 공개 주소를 생성합니다.
+
+환경 변수나 데이터베이스는 필요하지 않습니다. `main` 브랜치 자동 배포를 활성화하면 이후 push도 자동 반영됩니다.
+
+Docker가 설치된 환경에서는 Railway와 동일한 방식으로 확인할 수 있습니다.
+
+```bash
+docker build -t python-lucky-draw .
+docker run --rm -p 3000:3000 -e PORT=3000 python-lucky-draw
+# http://localhost:3000 및 http://localhost:3000/health 확인
+```
+
 ## 파일 구조
 
 ```
