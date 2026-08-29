@@ -1,0 +1,27 @@
+{
+	admin off
+	persist_config off
+	auto_https off
+
+	log {
+		format json
+	}
+
+	servers {
+		trusted_proxies static private_ranges 100.0.0.0/8
+	}
+}
+
+:{$PORT:3000} {
+	log {
+		format json
+	}
+
+	# Railway가 새 배포를 트래픽에 연결하기 전에 확인하는 엔드포인트
+	rewrite /health /*
+
+	root * /srv
+	encode gzip
+	try_files {path} /index.html
+	file_server
+}
